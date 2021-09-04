@@ -1,14 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import Cart from './containers/cart';
-import Order from './containers/order';
+import Header from './components/Header/index'
+import Products from './containers/product'
+import CarouselCont from './components/CarouselCont';
+import Cards from './components/cards';
+
 
 function App() {
   return (
     <>
-      {/* <Cart/> */}
-      <Order/>
-    </>
+      <Header />
+      <CarouselCont/>
+      <Cards/>
+      <Products/>
+      </>
+
   );
 }
 
