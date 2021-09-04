@@ -3,7 +3,7 @@ import { Badge } from 'react-bootstrap';
 import Header from './components/Header/index'
 import Products from './containers/product'
 import CarouselCont from './components/CarouselCont';
-import Cards from './components/Cards';
+import Cards from './components/cards';
 
 
 function App() {
