@@ -1,11 +1,16 @@
 import './App.css';
-import Header from './components/Header/index';
+import Cart from './containers/cart';
+import Header from './components/Header/index'
+import Order from './containers/order';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-    </div>
+    <>
+      <Header />
+      {/* <Cart/> */}
+      <Order />
+    </>
+
   );
 }
 
