@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 
-/**
-* @author Rizwan Khan
-* @function 
-**/
+
 
 const Modal = (props) => {
     if (!props.visible) {
@@ -58,7 +55,7 @@ const MaterialInput = (props) => {
 
 const MaterialButton = (props) => {
     return (
-        <div style={{ width: '90%' }}>
+        <div style={{ width: '90%', ...props.style }}>
             <button
                 className="materialButton"
             >

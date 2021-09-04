@@ -1,16 +1,16 @@
 import './App.css';
-import Cart from './containers/cart';
 import Header from './components/Header/index'
-import Order from './containers/order';
 import Products from './containers/product'
+import CarouselCont from './components/CarouselCont';
+import Cards from './components/cards';
 
 
 function App() {
   return (
     <>
       <Header />
-      {/* <Cart/> */}
-      {/* <Order /> */}
+      <CarouselCont/>
+      <Cards/>
       <Products/>
       </>
 
