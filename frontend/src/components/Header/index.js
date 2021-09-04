@@ -87,9 +87,11 @@ const Header = (props) => {
               placeholder={'search for products, brands and more'}
             />
             <div className="searchIconContainer">
-              <IoIosSearch style={{
-                color: '#2874f0'
-              }} />
+              <a style={{cursor:"pointer"}}>
+                <IoIosSearch style={{
+                  color: '#2874f0'
+                }} />
+              </a>
             </div>
           </div>
         </div>
