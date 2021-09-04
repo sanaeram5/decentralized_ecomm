@@ -11,10 +11,10 @@ const ProductSchema=new moongoose.Schema({
         required:true
     },
     img:{
-        data:String
+        type:String
     },
     quantity:{
-        data:Number,
+        type:Number,
         required:true
     },
     price:{

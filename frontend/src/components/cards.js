@@ -12,9 +12,7 @@ const Cards = () => {
     return (
         <CardGroup>
             <Card style={{ width: '18rem' }}>
-                <Card.Img
-                style={{width:'150px', height:'200px'}}
-                 variant="top" src={img1} />
+                <Card.Img variant="top" src={img1} />
                 <Card.Body>
                     <Card.Title as="h3">boAt Airdopes 131 Bluetooth Headset </Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">(Cherry Blossom, True Wireless)</Card.Subtitle>
@@ -32,9 +30,7 @@ const Cards = () => {
             </Card>
 
             <Card style={{ width: '18rem' }}>
-                <Card.Img 
-                style={{width:'150px', height:'200px'}}
-                variant="top" src={img2} />
+                <Card.Img variant="top" src={img2} />
                 <Card.Body>
                     <Card.Title as="h3">SanDisk Cruzer Blade USB 32 GB </Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">(Black, Red)</Card.Subtitle>
@@ -48,9 +44,7 @@ const Cards = () => {
             </Card>
 
             <Card style={{ width: '18rem' }}>
-                <Card.Img 
-                style={{width:'150px', height:'200px'}}
-                variant="top" src={img3} />
+                <Card.Img variant="top" src={img3} />
                 <Card.Body>
                     <Card.Title as="h3">DANIEL WELLINGTON Rose Gold Black Analog Watch</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">(DW00100212)</Card.Subtitle>
@@ -63,9 +57,7 @@ const Cards = () => {
             </Card>
 
             <Card style={{ width: '18rem' }}>
-                <Card.Img 
-                style={{width:'150px', height:'200px'}}
-                variant="top" src={img4} />
+                <Card.Img variant="top" src={img4} />
                 <Card.Body>
                     <Card.Title as="h3">Orient Electric Fabri Press DIFP10BP 1000 W Dry Iron </Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">(Blue, Black)</Card.Subtitle>
@@ -79,10 +71,8 @@ const Cards = () => {
                 </Card.Body>
             </Card>
 
-            {/* <Card style={{ width: '18rem' }}>
-                <Card.Img 
-                style={{width:'150px', height:'200px'}}
-                variant="top" src={img5} />
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={img5} />
                 <Card.Body>
                     <Card.Title as="h3">Butterfly Arrow 500 W Mixer Grinder </Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">(3 Jars, Grey)</Card.Subtitle>
@@ -98,8 +88,7 @@ const Cards = () => {
             </Card>
 
             <Card style={{ width: '18rem' }}>
-                <Card.Img style={{width:'250px', height:'200px'}}
-                variant="top" src={img6} />
+                <Card.Img variant="top" src={img6} />
                 <Card.Body>
                     <Card.Title as="h3">Coocaa 127 cm (50 inch) Ultra HD (4K) </Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">(50S6G Pro)</Card.Subtitle>
@@ -109,8 +98,7 @@ const Cards = () => {
                     </Card.Text>
                     <Button variant="primary">Add to Cart</Button> {' '} <Button variant="danger">Buy Now</Button>
                 </Card.Body>
-            </Card> */}
-
+            </Card>
         </CardGroup>
     )
 }

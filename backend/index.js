@@ -1,19 +1,19 @@
 const port= process.env.PORT||3000;
 
 const express=require('express');
-var cors = require('cors');
+var cor = require('cors');
 
 const app=express();
-app.use(cors({origin: true, credentials: true}));
+app.use(cor({origin: true, credentials: true}));
 const path=require("path");
 
-const Koa = require('Koa');
+const Koa = require('koa');
 const KRouter = require('@koa/router');  
 const cors = require('@koa/cors');
 const dapp = new Koa();
 const krouter = new KRouter();
 const ethers = require('ethers');
-const PaymentProcessor = require('../frontend/src/contract/build/contracts/PaymentProcessor.json');
+const PaymentProcessor = require('../frontend/src/contracts/PaymentProcessor.json');
 const { Payment } = require('./models/payment');
 
 require('./db/conn');
