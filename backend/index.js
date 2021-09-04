@@ -237,6 +237,7 @@ app.post("/create-product",async (req,res)=>{
             name:req.body.name,
             description:req.body.description,
             img:req.body.img,
+            quantity:req.body.quantity,
             price:req.body.price,
             seller:req.body.seller,
             created_at:req.body.created_at
@@ -258,7 +259,7 @@ app.post("/get-product",async (req,res)=>{
         //to find the product by name
         const productname= await Product.findOne({name:name});
         //to display details of the product
-        res.status(201).send({name:productname.name,img:productname.img,description:productname.description,price:productname.price,seller:productname.seller,created_at:productname.created_at});
+        res.status(201).send({name:productname.name,img:productname.img,description:productname.description,quantity:productname.quantity,price:productname.price,seller:productname.seller,created_at:productname.created_at});
     }catch(err){
         res.status(400).send(err);
     }
@@ -299,6 +300,7 @@ app.post("/update-product",async (req,res)=>{
         const productname= await Product.findOneAndUpdate({name:name},{
             description:req.body.description,
             img:req.body.img,
+            quantity:req.body.quantity,
             price:req.body.price,
             seller:req.body.seller,
             created_at:req.body.created_at

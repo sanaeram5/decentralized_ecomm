@@ -13,6 +13,10 @@ const ProductSchema=new moongoose.Schema({
     img:{
         data:String
     },
+    quantity:{
+        data:Number,
+        required:true
+    },
     price:{
         type:Number,
         required:true
