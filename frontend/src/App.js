@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Cart from './containers/cart';
+import Order from './containers/order';
 
 function App() {
   return (
     <>
-      <h2>Hii</h2>
-      <Cart/>
+      {/* <Cart/> */}
+      <Order/>
     </>
   );
 }

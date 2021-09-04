@@ -8,7 +8,7 @@ const CartCard = (item) =>{
                 <div className="row">
                     <div className="col-md-1"></div>
                     <div className="col-md-3">
-                        <img src={item.item.image} alt="" width="130px" height="230px" />
+                        <img src={item.item.image} alt="" width="115px" height="230px" />
                     </div>
                     <div className="col-md-8">
                         <h2>{item.item.product_name}</h2>

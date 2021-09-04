@@ -11,9 +11,9 @@ const Cart = () =>{
         <>
             <section className="Cart">
                 <div className="container">
+                    
                     {CartContets}
                 
-
                     <div className="CartButtons">
                         <button className="btn checkoutBtn">Check Out</button>
                     </div>
