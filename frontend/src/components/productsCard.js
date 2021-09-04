@@ -26,6 +26,10 @@ const ProductCard = (item) =>{
                     <div className="col-md-1"/>
                 </div>
             </div>
+            <div className="addToCart">
+                            <a href="#" style={{textDecoration:'none',backgroundColor:'#883454',color:"#fff",padding:"10px"}}><strong>Add to Cart</strong></a>
+                        </div>
+
             <hr/>
         </>
     );
