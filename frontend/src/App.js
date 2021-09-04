@@ -3,14 +3,14 @@ import { Badge } from 'react-bootstrap';
 import Header from './components/Header/index'
 import Products from './containers/product'
 import CarouselCont from './components/CarouselCont';
-import Cards from './components/Cards';
+import Cards from './components/cards';
 
 
 function App() {
   return (
     <>
       <Header />
-      <CarouselCont />
+      {/*<CarouselCont />
       <div>
         <h1 style ={{
           margin: '20px 0 20px 10px'
@@ -26,7 +26,7 @@ function App() {
         }}>
           Top offers  <Badge bg="secondary">now</Badge>
         </h1>
-      </div>
+      </div>*/}
 
       <Products />
     </>

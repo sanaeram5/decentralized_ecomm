@@ -1,7 +1,10 @@
 const port= process.env.PORT||3000;
 
 const express=require('express');
+var cors = require('cors');
+
 const app=express();
+app.use(cors({origin: true, credentials: true}));
 const path=require("path");
 require('./db/conn');
 const hbs=require("hbs");
@@ -261,6 +264,16 @@ app.post("/get-product",async (req,res)=>{
     }
 })
 
+//to get all products in json format
+app.get("/get-all-products",async(req,res)=>{
+    try{
+    res.header( "Access-Control-Allow-Origin","*" );
+	const product=await Product.find({},{__v:0});
+	res.status(200).send(product);
+	}catch(err){
+	    res.status(400).send(err);
+	}
+})
 
 //to delete product by name
 app.post("/delete-product",async (req,res)=>{
