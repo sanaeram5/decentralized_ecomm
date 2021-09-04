@@ -9,20 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.1.1",
     "bcrypt": "^5.0.1",
+    "ethers": "^5.4.6",
     "express": "^4.17.1",
     "hbs": "^4.1.2",
     "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.1",
     "mongoose": "^6.0.4",
     "nodemon": "^2.0.12"
-=======
-    "@koa/cors": "^3.1.0",
-    "@koa/router": "^10.1.1",
-    "ethers": "^5.4.6",
-    "express": "^4.17.1",
-    "koa": "^2.13.1",
-    "mongoose": "^6.0.4"
->>>>>>> 7d96f7c8f77d732e54cf63ebab16ada3ba641b79
   }
 }
