@@ -12,6 +12,8 @@ const CarouselCont = () => {
             <Carousel.Item interval={1000} fade= {true} >
                 <img
                     className="d-block w-100"
+                    width="100%"
+                    height='400px'
                     src={image1}
                     alt="First slide"
                 />
@@ -23,6 +25,8 @@ const CarouselCont = () => {
             <Carousel.Item interval={1000}>
                 <img
                     className="d-block w-100"
+                    width="100%"
+                    height='400px'
                     src={image2}
                     alt="Second slide"
                 />
@@ -34,6 +38,8 @@ const CarouselCont = () => {
             <Carousel.Item interval={1000}>
                 <img
                     className="d-block w-100"
+                    width="100%"
+                    height='400px'
                     src={image3}
                     alt="Third slide"
                 />
