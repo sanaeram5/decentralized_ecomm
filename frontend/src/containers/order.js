@@ -1,8 +1,51 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./order.css";
 import iphone from "../images/apple-iphone-12.jpeg";
+import getBlockchain from './ethereum';
+import { ethers } from 'ethers';
+import axios from 'axios';
+
+const API_URL = 'http://localhost:9000';
 
 const Order = () =>{
+
+    const [paymentProcessor, setPaymentProcessor] = useState(undefined);
+    const [dai, setDai] = useState(undefined);
+
+
+    useEffect(()=>{
+        const init = async () => {
+            const {paymentProcessor, dai } = await getBlockchain();
+            setPaymentProcessor(paymentProcessor);
+            setDai(dai);
+        }
+        init();
+    }, []);
+
+
+    if(typeof window.ethereum === 'undefined'){
+        return(
+            <div className="container">
+                <div className="col-sm-12">
+                    <h2>Install MetaMask</h2>
+                </div>
+            </div>
+        )
+    }
+
+
+    const buy = async item => {
+        const response1 = await axios.get(`${API_URL}/getPaymentID/${item_id}`);
+        const tx1 = await dai.approve(paymentProcessor.address, item.price);
+        await tx1.wait();
+
+        const tx2 = await paymentProcessor.pay(item.price, response1.data.paymentId);
+        await tx2.wait();
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        const response2 = await axios.get(`${API_URL}/getItemUrl/${response1.data.paymentId}`);
+        console.log(response2);
+    }
+
     return(
         <>
             <section className="Order container">
@@ -54,7 +97,7 @@ const Order = () =>{
 
                         <div className="checkOutSection">
                             <div className="totalAmount">Total Amount:<strong>20,000</strong></div>
-                            <button className="btn orderButton" type="submit">Place Order</button>
+                            <button className="btn orderButton" type="submit" onClick={() =>  buy(item)}>Place Order</button>
                         </div>
                     </form>
                 </div>

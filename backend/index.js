@@ -6,8 +6,18 @@ var cors = require('cors');
 const app=express();
 app.use(cors({origin: true, credentials: true}));
 const path=require("path");
+
+const Koa = require('Koa');
+const KRouter = require('@koa/router');  
+const cors = require('@koa/cors');
+const dapp = new Koa();
+const krouter = new KRouter();
+const ethers = require('ethers');
+const PaymentProcessor = require('../frontend/src/contract/build/contracts/PaymentProcessor.json');
+const { Payment } = require('./models/payment');
+
 require('./db/conn');
-const hbs=require("hbs");
+// const hbs=require("hbs");
 
 const Register=require("./models/seller");
 const Product=require("./models/product");
@@ -20,7 +30,8 @@ const bcrypt = require('bcrypt');
 
 const rounds = 10
 
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { Router } = require('express');
 const tokenSecret = "my-token-secret"
 
 
@@ -311,6 +322,47 @@ app.post("/update-product",async (req,res)=>{
     }
 })
 
+
+
+
+
+
+
+//Transactions
+
+krouter.get('/getPaymentId/:itemId', async ctx => {
+    const paymentId = (Math.random()*10000).toFixed(0);
+    await Payment.create({
+        id:paymentId,
+        itemId:ctx.params.itemId,
+        paid: false
+    });
+    ctx.body = {
+        paymentId
+    };
+});
+
+krouter.get('/getItemUrl/:paymentId', async ctx => {
+    const payment = await Payment.findOne({id: ctx.params.paymentId});
+    if(payment && payment.paid === true){
+        ctx.body = {
+            url:items[payment.itemId].url
+        };
+    }else{
+        ctx.body = {
+            url: ''
+        }
+    }
+})
+
+dapp.use(cors()).use(krouter.routes()).use(krouter.allowedMethods());
+
+
+
+
+
+
+
 //to create an order
 app.post("/create-order",async (req,res)=>{
     try{
@@ -414,3 +466,27 @@ app.post("/update-orderstatus",async (req,res)=>{
 app.listen(port,()=>{
     console.log("server is up")
 });
+
+
+
+const listenToEvents = () => {
+    const provider = new ethers.providers.JsonRpcBatchProvider('http://localhost:9545');
+    const networkId = '5777';
+
+    const PaymentProcessor = new ethers.Contract(
+        PaymentProcessor.networks[networkId].address, PaymentProcessor.abi, provider
+    );
+
+
+    PaymentProcessor.on('PaymentDone', async(payer, amount, paymentId, date) => {
+        console.log('recieving payment')
+
+        const payment = await Payment.findOne({id:paymentId});
+        if(payment){
+            payment.paid = true;
+            await payment.save();
+        }
+
+    });   
+}
+listenToEvents();

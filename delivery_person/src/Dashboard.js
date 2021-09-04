@@ -11,6 +11,7 @@ class Dashboard extends Component{
 			<>
 			<section className="dashboard">
         <div className="grid">
+          <h2>Dash</h2>
           <Header/>
           <SideNav/>
           <Main/>
