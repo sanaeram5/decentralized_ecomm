@@ -11,7 +11,7 @@ const ProductCard = (item) =>{
                         <img src={item.item.image} alt="" width="115px" height="230px" />
                     </div>
                     <div className="col-md-7">
-                        <a >
+                        <a style={{cursor:"pointer",textDecoration:"none"}}>
                         <h2>{item.item.product_name}</h2>
                             </a>
                         <h3>Rs. {item.item.price}</h3>
@@ -21,9 +21,7 @@ const ProductCard = (item) =>{
                                 {item.item.description}
                             </p>
                         </div>
-                        <div className="removeButton">
-                            <a href="#" style={{textDecoration:'none'}}><strong>Remove Product</strong></a>
-                        </div>
+                        
                     </div>   
                     <div className="col-md-1"/>
                 </div>
