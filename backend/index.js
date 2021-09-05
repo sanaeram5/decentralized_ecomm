@@ -473,12 +473,12 @@ const listenToEvents = () => {
     const provider = new ethers.providers.JsonRpcBatchProvider('http://localhost:9545');
     const networkId = '5777';
 
-    const PaymentProcessor = new ethers.Contract(
+    const paymentProcessor = new ethers.Contract(
         PaymentProcessor.networks[networkId].address, PaymentProcessor.abi, provider
     );
 
 
-    PaymentProcessor.on('PaymentDone', async(payer, amount, paymentId, date) => {
+    paymentProcessor.on('PaymentDone', async(payer, amount, paymentId, date) => {
         console.log('recieving payment')
 
         const payment = await Payment.findOne({id:paymentId});
