@@ -1,4 +1,4 @@
-# DecentraCart
+# DecentraCart 	:shopping_cart:
 ##### _- A Decentralized cart_
 
 
