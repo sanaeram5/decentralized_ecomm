@@ -47,3 +47,11 @@ DecentraCart uses a number of technologies to work properly:
 
 - [MetaMask](https://metamask.io/) - MetaMask is an extension for accessing Ethereum enabled distributed applications, or “Dapps” in a browser! The extension injects the Ethereum web3 API into every website's javascript context, so that DApps can read from the blockchain.
 
+
+### Contributors
+
+- [Sana Eram](https://github.com/sanaeram5)
+- [Jaanbaaz Akhtar](https://github.com/JaanbaazAkhtar)
+- [Jawed Alam](https://github.com/zjaweds)
+- [Rahima Khanam](https://github.com/RahimaKhanam)
+
