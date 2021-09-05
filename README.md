@@ -15,11 +15,18 @@ DecentraCart is implemented using the blockchain. All the data will be stored on
 - On a successful delivery the particular item delivered will reflect the status and will be shifted to the delivered products section.
 - In case of a query or feedback, the seller will have to answer them.
 
+![Seller](https://user-images.githubusercontent.com/76172860/132112173-185ba01f-27ff-43be-a2e2-f5ef1ab2a67b.jpg)
+
+
 ### 2.Buyer
 - Buyer will get all the features provided as in a normal ecommerce site, except for that everything is on blockchain.
 
+![Buyer](https://user-images.githubusercontent.com/76172860/132112174-7042c931-38e9-4638-adca-b5ce5dc45843.jpg)
+
 ### 3.Delivery guy
 - It is managed from the seller's end.
+
+![Delivery](https://user-images.githubusercontent.com/76172860/132112176-88b590c3-ac14-4e2c-b82a-34c7e3caf799.jpg)
  
 
 ## How the Smart contract Plays here?
